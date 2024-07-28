@@ -24,7 +24,7 @@ function validateCardNumber(cardNumber) {
     if (index % 2 == 0) {
       return num * 2 > 9 ? num * 2 - 9 : num * 2;
     }
-    return Number(num);
+    return num;
   });
 
   const sumArrValues = lunaArr.reduce((acc, current) => {
