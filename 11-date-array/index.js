@@ -5,16 +5,19 @@ const dateArr = [
   "00/13/2022",
   "41/12/2023",
   "29/02/2023",
-  "29/02/2024",
+  "29-02-2024",
 ];
 
 function splitDate(date) {
+  let day, month, year;
   if (date.includes("/")) {
-    return date.split("/");
+    [month, day, year] = date.split("/");
   }
   if (date.includes("-")) {
-    return date.split("-");
+    [day, month, year] = date.split("-");
   }
+
+  return [day, month, year];
 }
 
 function isLeapYear(year) {
