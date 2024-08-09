@@ -1,14 +1,16 @@
 const ToDoList = {
   todos: [],
   addTodo: function (todo) {
-    if (todo.title === "") {
+    const newTodo = { ...todo };
+
+    if (newTodo.title === "") {
       console.log("Не указан заголовок");
       return;
     }
-    if (todo.priority === undefined) {
-      todo.priority = 1;
+    if (newTodo.priority === undefined) {
+      newTodo.priority = 1;
     }
-    this.todos.push(todo);
+    this.todos.push(newTodo);
   },
   getTodoById: function (id) {
     const todo = this.todos.find((todo) => todo.id === id);
