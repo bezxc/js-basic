@@ -1,10 +1,16 @@
+
+let lastId = 0
+
 const toDoList = {
   todos: [],
   addTodo: function (todo) {
     if (!todo) {
       return;
     }
-    this.todos.push(todo);
+    this.todos.push({
+      ...todo,
+      id: lastId + 1,
+    });
   },
   getTodoById: function (id) {
     const todo = this.todos.find((todo) => todo.id === id);
@@ -104,7 +110,7 @@ const getNewTask = toDoList.getTodoById.bind(newTask);
 // Bind
 addNewTask(data);
 removeNewTask(1);
-updateNewTask(2, {
+updateNewTask(3, {
   name: "Updated todo",
 });
 console.log(newTask);
